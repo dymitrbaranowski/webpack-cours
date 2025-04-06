@@ -1,10 +1,7 @@
-import { Configuration } from "webpack";
-import webpack from "webpack";
+import { Configuration, ProgressPlugin } from "webpack";
 import { BuildOptions } from "./types/types";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { ProgressPlugin } from "webpack";
-import path from "path";
 
 export function buildPlugins({
   mode,
@@ -20,15 +17,14 @@ export function buildPlugins({
   ];
 
   if (isDev) {
-    plugins.push(new webpack.HotModuleReplacementPlugin()); // Enable HMR in development mode
-    // Enable HMR in development mode
+    plugins.push(new ProgressPlugin());
   }
 
   if (isProd) {
     plugins.push(
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
-        chunkFilename: "[id].[contenthash].css",
+        filename: "css/[name].[contenthash:8].css",
+        chunkFilename: "css/[name].[contenthash:8].css",
       })
     );
   }

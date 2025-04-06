@@ -11,25 +11,29 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
       // Creates `style` nodes from JS strings
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
-      "css-loader",
+
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            auto: (filename: string) => Boolean(filename.includes(".module.")),
+            localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+          },
+          importLoaders: 1,
+
+          sourceMap: isDev,
+        },
+      },
       // Compiles Sass to CSS
       "sass-loader",
     ],
   };
-  const cssLoader = {
-    test: /\.css$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
-      "css-loader",
-    ],
-  };
+
   const tsLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
   };
 
-  return [scssLoader, cssLoader, tsLoader];
+  return [scssLoader, tsLoader];
 }
