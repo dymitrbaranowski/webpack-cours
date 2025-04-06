@@ -1,4 +1,4 @@
-button {
+.button {
   background-color: #4caf50; /* Green */
   border: none; /* Remove borders */
 
@@ -12,4 +12,12 @@ button {
 
   cursor: pointer; /* Pointer/hand icon */
   border-radius: 12px; /* Rounded corners */
+}
+
+.value {
+  font: 1em sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5em;
 }
