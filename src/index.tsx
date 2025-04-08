@@ -2,6 +2,10 @@
 import { createRoot } from "react-dom/client";
 import { App } from "./components/App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { LazyAbout } from "./pages/about/About.lazy";
+import { Shop } from "./pages/Shop";
+import { Suspense } from "react";
+import About from "./pages/about/About";
 
 const root = document.getElementById("root") as HTMLElement;
 if (!root) {
@@ -17,11 +21,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/about",
-        element: <div>About</div>,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/shop",
-        element: <div>Shop</div>,
+        element: (
+          <Suspense fallback={"Loading..."}>
+            <Shop />
+          </Suspense>
+        ),
       },
     ],
   },
