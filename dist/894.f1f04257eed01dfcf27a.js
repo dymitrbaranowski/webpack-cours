@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_cours=self.webpackChunkwebpack_cours||[]).push([[894],{894:(s,e,c)=>{c.r(e),c.d(e,{default:()=>r});var h=c(848);const r=function(){return(0,h.jsxs)("div",{children:[(0,h.jsx)("h1",{children:"Shop"}),(0,h.jsx)("p",{children:"This is the shop page."})]})}}}]);
