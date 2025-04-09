@@ -6,12 +6,14 @@ import path from "path";
 
 interface EnvVariables {
   mode: BuildMode; // 'development' | 'production'
-  port: number; // Optional, as it may not be used in all configurations
+  port: number;
+  // Optional, as it may not be used in all configurations
+  analyzer?: boolean;
 }
 
 export default (env: EnvVariables) => {
   const paths: BuildPaths = {
-    output: path.resolve(__dirname, "dist"),
+    output: path.resolve(__dirname, "build"),
     entry: path.resolve(__dirname, "src", "index.tsx"),
     html: path.resolve(__dirname, "public", "index.html"),
   };
@@ -20,6 +22,7 @@ export default (env: EnvVariables) => {
     port: env.port ?? 3000,
     mode: env.mode ?? "development",
     paths,
+    analyzer: env.analyzer,
   });
 
   return config;

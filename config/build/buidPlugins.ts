@@ -2,10 +2,12 @@ import { Configuration, ProgressPlugin } from "webpack";
 import { BuildOptions } from "./types/types";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins({
   mode,
   paths,
+  analyzer,
 }: BuildOptions): Configuration["plugins"] {
   const isDev = mode === "development";
   const isProd = mode === "production";
@@ -18,6 +20,7 @@ export function buildPlugins({
 
   if (isDev) {
     plugins.push(new ProgressPlugin());
+    return plugins;
   }
 
   if (isProd) {
@@ -29,5 +32,7 @@ export function buildPlugins({
     );
   }
 
-  return plugins;
+  if (analyzer) {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
 }
