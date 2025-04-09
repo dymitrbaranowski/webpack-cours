@@ -1,6 +1,7 @@
 import React from "react";
 import * as styles from "./App.module.scss";
 import { Outlet, Link } from "react-router-dom";
+import About from "@/pages/about/About";
 
 export const App = () => {
   const [count, setCount] = React.useState<number>(0);
@@ -25,7 +26,7 @@ export const App = () => {
       <button className={styles.button} onClick={reset}>
         Reset
       </button>
-      <Outlet />
+      <About />
     </div>
   );
 };

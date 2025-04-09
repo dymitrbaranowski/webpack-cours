@@ -35,4 +35,6 @@ export function buildPlugins({
   if (analyzer) {
     plugins.push(new BundleAnalyzerPlugin());
   }
+
+  return plugins;
 }
