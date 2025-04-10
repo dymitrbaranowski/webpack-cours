@@ -5,6 +5,20 @@ import { ModuleOptions } from "webpack";
 export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   const isDev = options.mode === "development";
 
+  const assetLoader = {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+  };
+
+  const cssLoaderWithModules = {
+    loader: "css-loader",
+    options: {
+      modules: {
+        localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+      },
+    },
+  };
+
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -35,5 +49,5 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     exclude: /node_modules/,
   };
 
-  return [scssLoader, tsLoader];
+  return [assetLoader, scssLoader, tsLoader];
 }
