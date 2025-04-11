@@ -6,7 +6,7 @@ import AvatarPng from "@/assets/avatar.png";
 import AvatarJpg from "@/assets/avatar.jpg";
 import Image from "@/assets/app-image.svg";
 
-function TODO() {
+function TODO(a: number) {
   console.log("TODOFUNCTION");
 }
 
@@ -16,7 +16,7 @@ export const App = () => {
   const decrement = () => setCount((prev) => prev - 1);
 
   const reset = () => setCount(0);
-  TODO();
+  TODO(242425);
 
   if (__PLATFORM__ === "desktop") {
     return <div>ISDESKTOPPLATFORM</div>;

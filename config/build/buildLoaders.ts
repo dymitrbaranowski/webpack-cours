@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/types";
 import { ModuleOptions } from "webpack";
+import test from "node:test";
 
 export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   const isDev = options.mode === "development";
@@ -67,9 +68,19 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   };
 
   const tsLoader = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
+    //ts-loader умеет работать с  JSX
+    //если б мы не использовали ts-loader, то нужно было бы использовать babel-loader
+    //ts-loader умеет работать с tsx, поэтому не нужно использовать babel-loader
     exclude: /node_modules/,
+    test: /\.tsx?$/,
+    use: [
+      {
+        loader: "ts-loader",
+        options: {
+          transpileOnly: true,
+        },
+      },
+    ],
   };
 
   return [assetLoader, scssLoader, tsLoader, svgLoader];
