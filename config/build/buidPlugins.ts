@@ -18,7 +18,8 @@ export function buildPlugins({
       template: paths.html,
     }),
     new DefinePlugin({
-      platform,
+      __PLATFORM__: JSON.stringify(platform),
+      __ENV__: JSON.stringify(mode),
     }),
   ];
 
