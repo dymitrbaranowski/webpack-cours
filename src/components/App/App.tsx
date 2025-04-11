@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 // import About from "@/pages/about/About";
 import AvatarPng from "@/assets/avatar.png";
 import AvatarJpg from "@/assets/avatar.jpg";
-import Image from "@/assets/app-image.svg";
+import Image from "@/assets/calendar1.svg";
 
 function TODO(a: number) {
   console.log("TODOFUNCTION");
@@ -16,19 +16,19 @@ export const App = () => {
   const decrement = () => setCount((prev) => prev - 1);
 
   const reset = () => setCount(0);
-  TODO(242425);
+  // TODO(242425);
 
-  if (__PLATFORM__ === "desktop") {
-    return <div>ISDESKTOPPLATFORM</div>;
-  }
+  // if (__PLATFORM__ === "desktop") {
+  //   return <div>ISDESKTOPPLATFORM</div>;
+  // }
 
-  if (__PLATFORM__ === "mobile") {
-    return <div>ISMOBILEPLATFORM</div>;
-  }
+  // if (__PLATFORM__ === "mobile") {
+  //   return <div>ISMOBILEPLATFORM</div>;
+  // }
 
-  if (__ENV__ === "development") {
-    // addDevTools()
-  }
+  // if (__ENV__ === "development") {
+  //   // addDevTools()
+  // }
 
   return (
     <div>

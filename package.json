@@ -15,6 +15,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@types/node": "^20.8.3",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
@@ -24,6 +25,8 @@
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
+    "react-refresh": "^0.17.0",
+    "react-refresh-typescript": "^2.0.9",
     "sass": "^1.69.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
@@ -36,6 +39,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
