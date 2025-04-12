@@ -38,7 +38,7 @@ export const App = () => {
         <img width={100} height={100} src={AvatarJpg} alt="Avatar" />
       </div>
       <div>
-        <Image color={"red"} width={150} height={150} />
+        <Image color={"green"} width={150} height={150} />
       </div>
       <Link to={"/about"}>About</Link>
       <br />
