@@ -2,6 +2,7 @@ import { BuildOptions } from "../types/types";
 
 export function buildBabelLoader({ mode }: BuildOptions) {
   const isDev = mode === "development";
+
   return {
     test: /\.tsx?$/,
     exclude: /node_modules/,
