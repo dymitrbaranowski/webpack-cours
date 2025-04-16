@@ -6,13 +6,23 @@ import AvatarPng from "@/assets/avatar.png";
 import AvatarJpg from "@/assets/avatar.jpg";
 import Image from "@/assets/calendar1.svg";
 
-function TODO(a: number) {
-  console.log("TODOFUNCTION");
+//TREE SHAKING
+
+function TODO() {
+  TODO2();
+}
+function TODO2() {
+  throw new Error("TODO(242425)");
+  // TODO(242425);
 }
 
 export const App = () => {
   const [count, setCount] = React.useState<number>(0);
-  const increment = () => setCount((prev) => prev + 1);
+  const increment = () => {
+    // setCount((prev) => prev + 1)
+    TODO();
+    // TODO(242425);
+  };
   const decrement = () => setCount((prev) => prev - 1);
 
   const reset = () => setCount(0);
