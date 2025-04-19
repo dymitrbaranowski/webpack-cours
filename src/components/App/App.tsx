@@ -1,10 +1,10 @@
 import React from "react";
 import * as styles from "./App.module.scss";
 import { Outlet, Link } from "react-router-dom";
-// import About from "@/pages/about/About";
-import AvatarPng from "@/assets/avatar.png";
-import AvatarJpg from "@/assets/avatar.jpg";
-import Image from "@/assets/calendar1.svg";
+import About from "@/pages/about/About"
+import AvatarPng from "../assets/avatar.png";
+import AvatarJpg from "../assets/avatar.jpg";
+import Image from "../assets/calendar1.svg";
 
 //TREE SHAKING
 
@@ -65,7 +65,7 @@ export const App = () => {
       <button className={styles.button} onClick={reset}>
         Reset
       </button>
-      <Outlet />
+       <About />
     </div>
   );
 };
