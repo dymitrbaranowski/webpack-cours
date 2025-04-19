@@ -22,7 +22,7 @@
     // можно писать такой
     // import React from 'react';
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
 
     "paths": {
       "@/*": ["./src/*"]
@@ -34,3 +34,13 @@
     }
   }
 }
+
+// {
+//   "compilerOptions": {
+//     // other options
+//     "baseUrl": "./",
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   }
+// }

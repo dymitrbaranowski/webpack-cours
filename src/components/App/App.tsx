@@ -1,26 +1,26 @@
 import React from "react";
 import * as styles from "./App.module.scss";
 import { Outlet, Link } from "react-router-dom";
-import About from "@/pages/about/About"
-import AvatarPng from "../assets/avatar.png";
-import AvatarJpg from "../assets/avatar.jpg";
-import Image from "../assets/calendar1.svg";
+// import About from "@/pages/about/About";
+import AvatarPng from "@/assets/avatar.png";
+import AvatarJpg from "@/assets/avatar.jpg";
+import Image from "@/assets/calendar1.svg";
 
 //TREE SHAKING
 
-function TODO() {
-  TODO2();
-}
-function TODO2() {
-  throw new Error("TODO(242425)");
-  // TODO(242425);
-}
+// function TODO() {
+//   TODO2();
+// }
+// function TODO2() {
+//   throw new Error("TODO(242425)");
+//   // TODO(242425);
+// }
 
 export const App = () => {
   const [count, setCount] = React.useState<number>(0);
   const increment = () => {
-    // setCount((prev) => prev + 1)
-    TODO();
+    setCount((prev) => prev + 1);
+    // TODO();
     // TODO(242425);
   };
   const decrement = () => setCount((prev) => prev - 1);
@@ -65,7 +65,7 @@ export const App = () => {
       <button className={styles.button} onClick={reset}>
         Reset
       </button>
-       <About />
+      <Outlet />
     </div>
   );
 };
